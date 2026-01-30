@@ -1,0 +1,4 @@
+TransactionID,SystemAmount,ReferenceNumber,TransactionDate,BankAmount,Status,Reason_Variance
+TRX4001,1000,REF4001,2024-11-01,,NOT_MATCHED,Bank record not found
+TRX4002,1500,REF4002,2024-11-02,,NOT_MATCHED,Bank record not found
+TRX4003,2000,REF4003,2024-11-03,,NOT_MATCHED,Bank record not found

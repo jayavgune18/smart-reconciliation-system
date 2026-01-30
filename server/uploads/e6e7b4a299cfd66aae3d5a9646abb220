@@ -1,0 +1,6 @@
+TransactionID,SystemAmount,ReferenceNumber,TransactionDate,BankAmount,Status,Reason_Variance
+TRX2001,1000,REF1001,2024-10-01,1000,MATCHED,No variance
+TRX2002,1500,REF1002,2024-10-02,1400,PARTIAL,Amount mismatch of 100
+TRX2003,2000,REF1003,2024-10-03,,NOT_MATCHED,Bank record missing
+TRX2004,750,REF1004,2024-10-04,750,DUPLICATE,Duplicate transaction detected
+TRX2004,750,REF1004,2024-10-04,750,DUPLICATE,Duplicate transaction detected
