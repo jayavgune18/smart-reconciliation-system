@@ -1,6 +1,6 @@
 # Smart Reconciliation System
 
-A **Smart Reconciliation System** built using the **MERN stack (MongoDB, Express, React, Node.js)** that automates transaction matching, identifies discrepancies, and streamlines reconciliation workflows through a modern web interface.
+A **Smart Reconciliation System** built using the **MERN stack (MongoDB, Express, React, Node.js)** that automates transaction matching, identifies discrepancies, and streamlines reconciliation workflows through a modern web interface
 
 ---
 
@@ -166,3 +166,4 @@ This project is developed as a **MERN stack learning and portfolio project**. It
 ## 📄 License
 
 MIT License
+
