@@ -157,6 +157,38 @@ smart-reconciliation-system/
 
 ---
 
+## 🚀 Deployment (Render.com)
+
+This system is optimized for deployment on **Render** using the provided `render.yaml` blueprint.
+
+### 1. Database Setup
+1. Create a **MongoDB Atlas** cluster (Free Tier).
+2. Obtain your `MONGO_URI` (e.g., `mongodb+srv://...`).
+
+### 2. Deploy to Render
+1. Connect your GitHub repository to Render.
+2. Render will automatically detect the `render.yaml` file.
+3. Configure the following **Environment Variables** in the Render Dashboard:
+   - `MONGO_URI`: Your MongoDB Atlas connection string.
+   - `JWT_SECRET`: A secure random string for authentication.
+   - `NODE_ENV`: Should be set to `production`.
+
+### 3. Initialize Data (Seeding)
+Once the service is live, you need to seed the system records and matching rules:
+1. Go to the **Shell** tab of your Web Service in Render.
+2. Run: `npm run seed`
+3. This will create the default "System" records used for reconciliation.
+
+---
+
+## 🎨 Aesthetics & UI
+The system features a **Premium Dark Glassmorphism** design:
+- **Vibrant Interactive Elements**: Smooth hover effects and micro-animations.
+- **Glassmorphic Cards**: Depth and transparency using backdrop-filters.
+- **Responsive Matrix**: Data visualizations optimized for all screen sizes.
+
+---
+
 ## 📝 Note
 
 This project is developed as a **MERN stack learning and portfolio project**. It does not process real financial data and should not be used in production environments without further hardening.

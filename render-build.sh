@@ -3,10 +3,13 @@
 set -o errexit
 
 # Install dependencies and build the client
+echo "Building client..."
 cd client
 npm install
-npm run build
+CI=false npm run build
 
 # Install dependencies for the server
+echo "Installing server dependencies..."
 cd ../server
 npm install
+echo "Build complete."

@@ -15,4 +15,13 @@ services:
       - key: JWT_SECRET
         sync: false
       - key: REDIS_URL
-        sync: false
+        fromService:
+          type: redis
+          name: smart-reconciliation-redis
+          property: connectionString
+
+  - type: redis
+    name: smart-reconciliation-redis
+    region: oregon
+    plan: free # Note: Free plan might not be available in all regions
+    ipAllowList: [] # Only allow internal connections

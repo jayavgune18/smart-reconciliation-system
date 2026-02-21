@@ -8,8 +8,13 @@ let config = {};
 try {
   config = require('./config');
 } catch (error) {
-  console.log('config.js not found, using environment variables');
+  console.log('config.js not found or error loading it, using environment variables');
 }
+
+// Health check route for deployment platforms
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'UP', timestamp: new Date(), environment: process.env.NODE_ENV });
+});
 
 const authRoutes = require('./routes/auth');
 const uploadRoutes = require('./routes/upload');
@@ -32,9 +37,16 @@ if (!MONGO_URI) {
 }
 
 mongoose.connect(MONGO_URI)
-  .then(() => console.log('Connected to MongoDB successfully'))
+  .then(() => {
+    console.log('✅ Connected to MongoDB successfully');
+    console.log('DB Host:', mongoose.connection.host);
+  })
   .catch(err => {
-    console.error('MongoDB connection error:', err.message);
+    console.error('❌ MongoDB connection failure!');
+    console.error('Error details:', err.message);
+    console.error('Check if your MONGO_URI is correct and your IP is whitelisted (if using Atlas).');
+    // In some environments, we might want to stay alive even if DB is down initially, 
+    // but for this app the DB is critical.
     process.exit(1);
   });
 
@@ -55,5 +67,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`🚀 Server initialized on stage: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`📡 Listening at http://0.0.0.0:${PORT}`);
+}).on('error', (err) => {
+  console.error('❌ Failed to start server:', err.message);
+  process.exit(1);
 });

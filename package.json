@@ -4,6 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server/server.js",
+    "seed": "node server/seed.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && npm start",
     "server-win": "pushd server && npm start && popd",
