@@ -1,4 +1,4 @@
-# AI-Powered Financial Reconciliation System (MERN Stack)
+# AI-Based Reconciliation System 
 
 An enterprise-grade, production-ready double-entry financial reconciliation application built using the MERN stack with dynamic AI-powered transaction matching, risk controls, and automated reporting.
 

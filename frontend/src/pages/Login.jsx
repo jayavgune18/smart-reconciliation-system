@@ -123,7 +123,7 @@ export const Login = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="name@company.com"
+                  placeholder="Enter Email.."
                   className="w-full pl-10 pr-4 py-2.5 bg-slate-950/50 border border-slate-800 rounded-lg text-xs focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
                 />
               </div>

@@ -65,7 +65,7 @@ export const DashboardLayout = ({ children }) => {
               A
             </div>
             <span className="font-extrabold text-sm tracking-wider uppercase bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
-              Antigravity Recon
+              Reconciliation System
             </span>
           </div>
           <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-slate-500 hover:text-slate-700">
